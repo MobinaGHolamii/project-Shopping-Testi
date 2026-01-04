@@ -21,7 +21,6 @@ rad.json
 #Test results file
 TestResults.xml
 /.vs
-<<<<<<< HEAD
 
 # Build results
 bin/
@@ -35,10 +34,3 @@ obj/
 
 # Ignore Visual Studio files
 .vs/
-=======
-# Ignore build outputs
-bin/
-obj/
-# Ignore Visual Studio files
-.vs/
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
