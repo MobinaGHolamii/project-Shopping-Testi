@@ -2,31 +2,29 @@
 
 <h1>جستجوی محصول</h1>
 
-<form asp-action="Search" method="post">
-    <input type="text" name="query" placeholder="اسم آیتم را وارد کنید" />
-    <button type="submit">Search</button>
+<form asp-action="Search" asp-controller="SearchingProduct" method="post">
+    <input type="text" name="query" placeholder="اسم آیتم را وارد کنید" style="padding:5px; width:250px;" />
+    <button type="submit" style="padding:5px 10px;">Search</button>
 </form>
 
-@if (Model.Any())
+@if (Model != null && Model.Count > 0)
 {
     <h2>نتایج:</h2>
     <ul>
         @foreach (var item in Model)
         {
             <li>
-                <strong>@item.Name</strong> - @item.Price تومان
+                <strong>@item.Name</strong> - @item.Category - @item.Price تومان
                 <p>@item.Description</p>
             </li>
         }
     </ul>
-}
-else if (!string.IsNullOrWhiteSpace(ViewBag.Query))
+    }
+else if (!string.IsNullOrEmpty(Context.Request.Query["query"]))
 {
     <p>هیچ محصولی پیدا نشد</p>
 }
+    
 
-<<<<<<< HEAD
 
      *@
-=======
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559

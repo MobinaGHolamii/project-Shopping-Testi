@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <p style="color: green; font-weight: bold;">
+        @TempData["SuccessMessage"]
+    </p>
+}
+
+
+<h1>Sending New Message</h1>
+
+<form asp-action="NewItem" method="post">
+    <div>
+        <label for="UserName">Name:</label>
+        <input type="text" id="UserName" name="UserName" required />
+    </div>
+
+    <div>
+        <label for="Phone">Phone Number:</label>
+        <input type="number" id="Phone" name="Phone" step="0.01" required />
+    </div>
+
+    <div>
+        <label for="Email">Email:</label>
+        <textarea id="Email" name="Email"></textarea>
+    </div>
+
+    <div>
+        <label for="Message">Message</label>
+        <input type="text" id="Messaage" name="Message" />
+    </div>
+
+    <button type="submit">Send</button>
+</form>

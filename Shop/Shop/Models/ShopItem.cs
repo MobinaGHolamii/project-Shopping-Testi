@@ -12,5 +12,4 @@ namespace Shop.Models
         [Column("IdCategory")] 
         public int IdCategory { get; set; }
     }
-
 }

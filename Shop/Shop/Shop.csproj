@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="MeteorGC.EntityFramework.Extensions.EFCore" Version="1.2.4" />
-<<<<<<< HEAD
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.22">
       <PrivateAssets>all</PrivateAssets>
@@ -21,9 +20,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.4" />
-=======
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.HierarchyId" Version="8.0.0" />
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
   </ItemGroup>
 
 </Project>

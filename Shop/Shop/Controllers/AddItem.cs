@@ -6,6 +6,8 @@ using System.Linq;
 
 namespace Shop.Controllers
 {
+    [Controller]
+    [Route("api/[controller]")]
     public class AddItem : Controller
     {
         private readonly ShopDbContext _context;
@@ -14,14 +16,7 @@ namespace Shop.Controllers
         {
             _context = context;
         }
-
-
         [HttpGet]
-
-
-
-
-
         public IActionResult NewItem()
         {
             return View();
@@ -32,21 +27,9 @@ namespace Shop.Controllers
         public IActionResult NewItem(string categoryName, ShopItem item)
         {
             if (!ModelState.IsValid)
-
-
                 return View(item);
 
              var category = _context.Categories.FirstOrDefault(c => c.Name == categoryName);
-
-                return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
-
-            var category = _context.Categories.FirstOrDefault(c => c.Name == categoryName);
-
-
-                return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
-
-            var category = _context.Categories.FirstOrDefault(c => c.Name == categoryName);
-
             if (category == null)
             {
                 category = new Category { Name = categoryName };
@@ -58,16 +41,8 @@ namespace Shop.Controllers
             _context.ShopItems.Add(item);
             _context.SaveChanges();
 
-
-
             TempData["SuccessMessage"] = "محصول با موفقیت ذخیره شد!";
             return RedirectToAction("NewItem");
-
-            return Json(new { success = true, message = "محصول با موفقیت ذخیره شد!", item });
-
-
-            return Json(new { success = true, message = "محصول با موفقیت ذخیره شد!", item });
-
         }
 
     }

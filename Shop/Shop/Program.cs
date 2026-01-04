@@ -1,16 +1,10 @@
-<<<<<<< HEAD
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Shop.Data;
-=======
-using Shop.Data;
-using Microsoft.EntityFrameworkCore;
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
 
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ShopDb");
-<<<<<<< HEAD
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -21,9 +15,6 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 });
-=======
-
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
 builder.Services.AddDbContext<ShopDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ShopDb")));
 
@@ -31,11 +22,7 @@ builder.Services.AddDbContext<ShopDbContext>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-<<<<<<< HEAD
 if(app.Environment.IsDevelopment())
-=======
-if (!app.Environment.IsDevelopment())
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
