@@ -16,11 +16,11 @@ namespace Shop.Controllers
         {
             _context = context;
         }
-<<<<<<< HEAD
-        [HttpGet]
-=======
 
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
+        [HttpGet]
+
+
+
         public IActionResult NewItem()
         {
             return View();
@@ -31,15 +31,15 @@ namespace Shop.Controllers
         public IActionResult NewItem(string categoryName, ShopItem item)
         {
             if (!ModelState.IsValid)
-<<<<<<< HEAD
+
                 return View(item);
 
              var category = _context.Categories.FirstOrDefault(c => c.Name == categoryName);
-=======
+
                 return Json(new { success = false, errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
 
             var category = _context.Categories.FirstOrDefault(c => c.Name == categoryName);
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
+
             if (category == null)
             {
                 category = new Category { Name = categoryName };
@@ -51,12 +51,12 @@ namespace Shop.Controllers
             _context.ShopItems.Add(item);
             _context.SaveChanges();
 
-<<<<<<< HEAD
+
             TempData["SuccessMessage"] = "محصول با موفقیت ذخیره شد!";
             return RedirectToAction("NewItem");
-=======
+
             return Json(new { success = true, message = "محصول با موفقیت ذخیره شد!", item });
->>>>>>> 9781d80847a2a6592d75ba29a30b1a5d34eb2559
+
         }
 
     }
